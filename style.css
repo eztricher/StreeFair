@@ -1,0 +1,175 @@
+.highlightable {
+    position: relative;
+    display: inline-block;
+}
+
+.highlightable::after {
+    content: "";
+    position: absolute;
+    top: -10px; /* Ajusta la posición hacia arriba para que la iluminación comience desde arriba */
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 20px); 
+    background-color: rgba(255, 255, 255, 0); /* Color de fondo transparente */
+    z-index: -1;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+.highlightable:hover::after {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+/*--------------------------------------------------------------------------------------------*/
+
+.menu {
+  position: fixed; /* se mantiene fijado */
+  top: 8%; /* posiciona el elemento desde la mitad de arriba hacia abajo */
+  left: 50%; /* posiciona el elemento desde la mitad de izquierda a derecha */
+  transform: translate(-50%, -50%); /* lo mueve hacia atrás y arriba un 50% de su propio ancho y alto */
+  width: 790px;
+  max-width: 90%; /* limita el ancho al 90% del ancho del viewport */
+  height: 25px; /* puedes modificar la altura según tus necesidades */
+  background-color: rgba(27, 27, 29, 0.8); /* color negro con 80% de transparencia */
+  color: #fff; /* color del texto */
+  padding: 23px 0; /* relleno superior e inferior del encabezado */
+  text-align: center; /* centra el texto horizontalmente */
+  z-index: 998; /* Asegurar que estén detrás del fondo desenfocado */
+  border-radius: 100px; /* redondea las esquinas */
+  backdrop-filter: blur(8px); /* Aplica un desenfoque al fondo */
+}
+
+.menu img {
+  position: absolute;
+  top: 11px;
+  left: 85px;
+  width: 50px;
+  height: 50px;
+}
+
+.selecion{
+  text-align: left;
+  font-size: 18px;
+}
+
+.contenido {
+  position: absolute;
+  top: 26px;
+  color: white;
+  margin-right: 10px; 
+  left: 380px;
+}
+
+.contenido2 {
+  position: absolute;
+  top: 26px;
+  color: white;
+  margin-left: 70px; 
+}
+.contenido3 {
+  position: absolute;
+  top: 26px;
+  color: white;
+  margin-left: 135px; 
+}
+.contenido4 {
+  position: absolute;
+  top: 26px;
+  color: white;
+  margin-left: 200px; 
+}
+
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+.colores {
+    display: flex;
+    justify-content: center;
+}
+
+.blue, .neo, .star, .green {
+    margin: 11px;
+    padding-top: 400px; /* Agrega un relleno en la parte superior */
+}
+
+.blue img, .neo img, .star img, .green img {
+    width: 270px;
+    height: 370px;
+    transition: transform 0.3s; /* Agrega una transición suave */
+    transform-origin: center center; /* Centra la transformación en ambos ejes */
+
+}
+
+
+
+/* Define la animación de entrada */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Define la animación de salida */
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplica la animación de entrada cuando el mouse está sobre la imagen */
+.blue img:hover,
+.neo img:hover,
+.star img:hover,
+.green img:hover {
+    animation: zoomIn 0.3s ease-in-out forwards; /* Mantiene los estilos finales de la animación */
+}
+
+/* Aplica la animación de salida cuando el mouse deja de estar sobre la imagen */
+.blue img:not(:hover),
+.neo img:not(:hover),
+.star img:not(:hover),
+.green img:not(:hover) {
+    animation: zoomOut 0.3s ease-in-out; /* Animación de salida suave */
+}
+/*------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra */
+}
+
+::-webkit-scrollbar-track {
+  background: #333; /* Color de fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666; /* Color del indicador de desplazamiento */
+  border-radius: 6px; /* Esquinas redondeadas */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Color del indicador de desplazamiento al pasar el cursor */
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+body {
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+}
+
+.enlace {
+    color: #ff00dd; /* Cambiar color del texto */
+    text-decoration: none; /* Eliminar subrayado por defecto */
+    font-weight: bold; 
+
+}
